@@ -1,16 +1,35 @@
-# React + Vite
+# Todolist ver.2 ✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+useReducer + Context API 기반으로 설계한 투두리스트 앱입니다.
 
-Currently, two official plugins are available:
+## 📌 프로젝트 소개
+액션 / 리듀서 / 스토리지 / 컨텍스트를 각각 파일로 분리해
+실제 프로젝트에 가까운 구조로 설계했습니다.
+localStorage로 새로고침 후에도 데이터가 유지됩니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ 주요 기능
+- 할 일 추가 / 완료 토글 / 삭제
+- 실시간 검색 필터링 (useMemo 최적화)
+- localStorage 자동 저장 및 불러오기
+- useReducer + Context API 전역 상태 관리
+- 액션 / 리듀서 / 스토리지 파일 분리 구조
+- useTodoStore 커스텀 훅으로 Context 접근
 
-## React Compiler
+## 📁 폴더 구조
+```
+src/
+├── components/   # Header, TodoEditor, TodoList, TodoItem
+└── contexts/     # TodoContext, actions, reducer, storage, useTodoActions, mockData
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 사용 기술
+- React (useReducer, useRef, useState, useEffect, useMemo, createContext)
+- localStorage
+- Vite
+- CSS
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 실행 방법
+```bash
+npm install
+npm run dev
+```
